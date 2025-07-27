@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HBD</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="inner">
+            <div class="box2">
+                <div class="tab">
+                    <img src="img/01c32151562a34035c5d3030a6ed3826.gif" alt="">
+                    <div class="cc">
+                        <img src="img/1.svg" alt="">
+                        <a href="index.html">
+                            <img src="img/2.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="bg3" id="container">
+                    <img id="bg3-img" src="img/672.jpg" alt="" style="display: none;">
+
+                    <div class="bg4" id="bg4-box" style="display: none;">
+                        <img id="bg4-img" src="img/916.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="countdown" id="countdown">3</div>
+            </div>
+        </div>
+    </div>
+    <audio id="shutterSound" src="music/mixkit-classic-camera-click-1440.mp3" preload="auto"></audio>
+    <script>
+
+        let count = 3;
+        const countdown = document.getElementById("countdown");
+        const bg3Img = document.getElementById("bg3-img");
+        const bg4Box = document.getElementById("bg4-box");
+        const shutterSound = document.getElementById("shutterSound");
+
+        const interval = setInterval(() => {
+            count--;
+            if (count > 0) {
+                countdown.textContent = count;
+            } else {
+                clearInterval(interval);
+                countdown.style.display = "none";
+                bg3Img.style.display = "block";
+                bg4Box.style.display = "block";
+                shutterSound.play();
+            }
+        }, 1300);
+
+    </script>
+</body>
+
+</html>
